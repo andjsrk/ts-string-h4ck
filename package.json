@@ -1,7 +1,7 @@
 {
 	"name": "@andjsrk/ts-string-h4ck",
 	"description": "A utility for manipulating string hack in TypeScript",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"types": "./index.d.ts",
 	"scripts": {
 		"test": "tsc -p tsconfig.test.json",
