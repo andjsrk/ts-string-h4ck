@@ -41,6 +41,5 @@ type ExtractStringHack<U> =
 export type IntersectWithoutLoss<A, B> =
 	// NOTE: we extract `StringHack` instead of just doing `| StringHack`
 	// because although user used this type, someday the both types may not have `StringHack`
-	(ExcludeStringHack<A> & ExcludeStringHack<B> | ExtractStringHack<A | B>) extends infer T
-		? T
-		: never
+	| ExtractStringHack<A | B>
+	| ExcludeStringHack<A> & ExcludeStringHack<B>
