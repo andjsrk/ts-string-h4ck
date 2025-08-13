@@ -1,4 +1,4 @@
-import { ExcludeStringHack, IntersectWithoutLoss, StringHack } from './index'
+import { ExcludeStringHack, IntersectLosslessly, StringHack } from './index'
 
 type Expect<_T extends ToBe, ToBe> = void
 
@@ -47,14 +47,14 @@ declare namespace ExcludeHack {
 }
 declare namespace Intersect {
 	namespace Basic {
-		type T = IntersectWithoutLoss<'a' | 'b' | StringHack, 'b' | 'c' | StringHack>
+		type T = IntersectLosslessly<'a' | 'b' | StringHack, 'b' | 'c' | StringHack>
 		type Checks = [
 			Expect<ExcludeStringHack<T>, 'b'>,
 			Expect<StringHack, T>,
 		]
 	}
 	namespace WithoutHack {
-		type T = IntersectWithoutLoss<'a' | 'b', 'b' | 'c'>
+		type T = IntersectLosslessly<'a' | 'b', 'b' | 'c'>
 		type Checks = [
 			Expect<T, 'b'>,
 		]

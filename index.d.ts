@@ -38,7 +38,7 @@ type ExtractStringHack<U> =
 /**
  * Intersects two unions without getting simplified to `string`.
  */
-export type IntersectWithoutLoss<A, B> =
+export type IntersectLosslessly<A, B> =
 	// NOTE: we extract `StringHack` instead of just doing `| StringHack`
 	// because although user used this type, someday the both types may not have `StringHack`
 	| ExtractStringHack<A | B>
