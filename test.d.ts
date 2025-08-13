@@ -1,4 +1,4 @@
-import { ExcludeStringHack, IntersectLosslessly, StringHack } from './index'
+import type { ExcludeStringHack, IntersectLosslessly, StringHack } from './index'
 
 type Expect<_T extends ToBe, ToBe> = void
 
